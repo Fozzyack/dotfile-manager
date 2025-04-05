@@ -4,8 +4,12 @@
 #include <filesystem>
 #include <iostream>
 
-void install_symlink(std::string initial_dir, std::string install_dir) {
-    std::filesystem::create_directory_symlink(install_dir, initial_dir);
+void install_symlink(std::string install_dir, std::string initial_dir) {
+    try {
+        std::filesystem::create_directory_symlink(initial_dir, install_dir);
+    } catch (std::filesystem::__cxx11::filesystem_error e) {
+        std::cout << "File may already exist :: Passing" << std::endl;
+    }
 }
 
 std::vector<std::string> get_configs(std::filesystem::path &path) {
@@ -19,6 +23,7 @@ std::vector<std::string> get_configs(std::filesystem::path &path) {
 }
 
 void install_all_dots(std::vector<std::string> &configs) {
+    std::cout << "INSTALLING ALL DOTFILES" << std::endl;
     const char *home_env = getenv("HOME");
 
     std::string home_location(home_env); // Location of users home
@@ -42,7 +47,9 @@ void install_all_dots(std::vector<std::string> &configs) {
         }
     }
     for(size_t i = 0; i < config_paths.size(); i++) {
-        std::cout << config_paths[i] << std::endl;
+        install_symlink(config_paths[i], configs[i]);
     }
+
+    std::cout << "Done ... Press ENTER to continue" << std::endl;
     
 }

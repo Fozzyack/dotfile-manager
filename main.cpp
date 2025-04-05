@@ -7,6 +7,7 @@
 #include "./src/headers/configs.h"
 
 
+
 int main() {
 
     system("clear");
@@ -32,9 +33,13 @@ int main() {
         switch(std::stoi(choice)) {
             case 1:
                 print_install_menu(configs);
-                install_all_dots(configs);
                 std::getline(std::cin, tmp);
                 std::getline(std::cin, choice_2);
+                if (choice_2 == "" || choice_2 == "0") install_all_dots(configs);
+                else {
+                    std::cout << "Unknown Choice" << std::endl;
+                }
+                std::getline(std::cin, tmp);
                 break;
             default:
                 std::cout << "Please Enter a Valid Choice" << std::endl;
