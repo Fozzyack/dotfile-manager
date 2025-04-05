@@ -32,4 +32,5 @@ I've been using ```cmake``` to create make file and build files.
 cd build
 cmake ..
 make
+./dotman
 ```
