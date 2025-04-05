@@ -11,7 +11,7 @@ void install_symlink(std::string install_dir, std::string initial_dir) {
     std::cout << "Attempting to install " << install_dir << " to " << install_dir << std::endl;
 
     try {
-        std::filesystem::create_directory_symlink(initial_dir, install_dir);
+        std::filesystem::create_symlink(initial_dir, install_dir);
     } catch (std::filesystem::__cxx11::filesystem_error e) {
         std::cout << "File may already exist :: Passing" << std::endl;
         return;
@@ -65,7 +65,7 @@ std::vector<std::string> get_install_locations(std::vector<std::string> &configs
         if (std::filesystem::is_directory(status)) {
             config_paths.push_back(config_location + res);
         } else {
-            config_paths.push_back(home_location + "/" + res);
+            config_paths.push_back(home_location + "/." + res);
         }
     }
     return config_paths;

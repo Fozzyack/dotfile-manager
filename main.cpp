@@ -69,6 +69,9 @@ int main() {
                 std::getline(std::cin, tmp);
                 break;
 
+            case 4:
+                exit(0);
+                break;
             default:
                 std::cout << "Please Enter a Valid Choice" << std::endl;
                 std::cout << "Press ENTER to continue..." << std::endl;
