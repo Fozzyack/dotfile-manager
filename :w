@@ -17,12 +17,11 @@ int main() {
     while(true) {
         print_options();
         std::cin >> choice;
-        int choice_2;
+        system("clear");
 
         switch(choice) {
             case 1:
-                print_install_menu(configs);
-                std::cin >> choice_2;
+                print_install_menu();
                 break;
             default:
                 std::cout << "Please Enter a Valid Choice" << std::endl;
