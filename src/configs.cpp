@@ -22,13 +22,13 @@ std::vector<std::string> get_configs(std::filesystem::path &path) {
     return configs;
 }
 
-void install_all_dots(std::vector<std::string> &configs) {
-    std::cout << "INSTALLING ALL DOTFILES" << std::endl;
+std::vector<std::string> get_install_locations(std::vector<std::string> &configs) {
+
     const char *home_env = getenv("HOME");
 
     std::string home_location(home_env); // Location of users home
     std::string config_location = home_location + "/.config/"; // Location of users config
-    std::cout << config_location << std::endl;
+                                                               //
     std::vector<std::string> config_paths;
 
     for(int i = 0; i < configs.size(); i++) {
@@ -46,6 +46,13 @@ void install_all_dots(std::vector<std::string> &configs) {
             config_paths.push_back(home_location + "/" + res);
         }
     }
+    return config_paths;
+}
+
+void install_all_dots(std::vector<std::string> &configs, std::vector<std::string> &config_paths) {
+
+    std::cout << "INSTALLING ALL DOTFILES" << std::endl;
+
     for(size_t i = 0; i < config_paths.size(); i++) {
         install_symlink(config_paths[i], configs[i]);
     }

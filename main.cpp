@@ -14,6 +14,7 @@ int main() {
 
     std::filesystem::path configs_path("configs/");
     std::vector<std::string> configs = get_configs(configs_path);
+    std::vector<std::string> config_paths = get_install_locations(configs);
     std::string choice = "-1";
     std::string tmp;
 
@@ -35,7 +36,7 @@ int main() {
                 print_install_menu(configs);
                 std::getline(std::cin, tmp);
                 std::getline(std::cin, choice_2);
-                if (choice_2 == "" || choice_2 == "0") install_all_dots(configs);
+                if (choice_2 == "" || choice_2 == "0") install_all_dots(configs, config_paths);
                 else {
                     std::cout << "Unknown Choice" << std::endl;
                 }
