@@ -23,3 +23,13 @@ Unsure if I will add these.
 - [ ] Add a "purge" function - Removes data stored in ```.local/share/[dotfile]``` -- Unsure if this is a good idea.
 - [ ] Freshen up the UI
 - [ ] Potentially add a feature to allow compatibility with other OS.
+
+### How to build
+
+I've been using ```cmake``` to create make file and build files.
+
+```bash
+cd build
+cmake ..
+make
+```
