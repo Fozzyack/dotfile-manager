@@ -66,6 +66,8 @@ int main() {
             
             case 3:
                 system("git pull");
+                std::cout << "Press ENTER to continue..." << std::endl;
+                std::getline(std::cin, tmp);
                 std::getline(std::cin, tmp);
                 break;
 
