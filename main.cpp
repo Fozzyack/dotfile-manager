@@ -38,10 +38,37 @@ int main() {
                 std::getline(std::cin, choice_2);
                 if (choice_2 == "" || choice_2 == "0") install_all_dots(configs, config_paths);
                 else {
-                    std::cout << "Unknown Choice" << std::endl;
+                    int status = install_individual(choice_2, configs, config_paths);
+                    if (status == 1) {
+                        std::cout << "Invalid Dotfile Selected [blank or 0 for all] or a [number] to select individual" << std::endl;
+                        std::cout << "Press ENTER to continue..." << std::endl;
+                    }
+
                 }
                 std::getline(std::cin, tmp);
                 break;
+                
+            case 2:
+                print_remove_menu(config_paths);
+                std::getline(std::cin, tmp);
+                std::getline(std::cin, choice_2);
+                if (choice_2 == "a") remove_all_dots(config_paths);
+                else {
+                    int status = remove_individual(choice_2, config_paths);
+                    if (status == 1) {
+                        std::cout << "Invalid Dotfile Selected [a for all] or a [number] to select individual" << std::endl;
+                        std::cout << "Press ENTER to continue..." << std::endl;
+                    }
+                }
+
+                std::getline(std::cin, tmp);
+                break;
+            
+            case 3:
+                system("git pull");
+                std::getline(std::cin, tmp);
+                break;
+
             default:
                 std::cout << "Please Enter a Valid Choice" << std::endl;
                 std::cout << "Press ENTER to continue..." << std::endl;
