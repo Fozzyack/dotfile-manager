@@ -52,6 +52,6 @@ void print_install_menu(std::vector<std::string> &configs) {
         std::cout << "[" << i + 1 << "] " << configs[i] << std::endl;
     }
     print_divider();
-    std::cout << "Enter Choice: " << std::endl;
+    std::cout << "Enter Choice: ";
 }
 

@@ -4,3 +4,4 @@
 #include <filesystem>
 
 std::vector<std::string> get_configs(std::filesystem::path &path);
+void install_all_dots(std::vector<std::string> &config);
