@@ -18,5 +18,8 @@ be saved into.
 - [ ] Other Error Handling
 
 ### Optionals
+
+Unsure if I will add these.
 - [ ] Add a "purge" function - Removes data stored in ```.local/share/[dotfile]``` -- Unsure if this is a good idea.
 - [ ] Freshen up the UI
+- [ ] Potentially add a feature to allow compatibility with other OS.
