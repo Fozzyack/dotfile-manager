@@ -1,12 +1,10 @@
-#include <climits>
+#include <climits> 
 #include <iostream>
 #include <filesystem>
 #include <vector>
 #include <string>
 #include "./src/headers/menu.h"
 #include "./src/headers/configs.h"
-
-
 
 int main() {
 
@@ -60,18 +58,16 @@ int main() {
                         std::cout << "Press ENTER to continue..." << std::endl;
                     }
                 }
-
                 std::getline(std::cin, tmp);
                 break;
-            
-            case 3:
+            case 5:
                 system("git pull");
                 std::cout << "Press ENTER to continue..." << std::endl;
                 std::getline(std::cin, tmp);
                 std::getline(std::cin, tmp);
                 break;
 
-            case 4:
+            case 6:
                 exit(0);
                 break;
             default:

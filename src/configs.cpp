@@ -72,33 +72,6 @@ std::vector<std::string> get_install_locations(std::vector<std::string> &configs
 }
 
 /*
- * Functions to install the symlinks | "Install" the dotfiles
- */
-void install_all_dots(std::vector<std::string> &configs, std::vector<std::string> &config_paths) {
-    std::cout << "INSTALLING ALL DOTFILES" << std::endl;
-
-    for(size_t i = 0; i < config_paths.size(); i++) {
-        install_symlink(config_paths[i], configs[i]);
-    }
-    std::cout << "\n\nDone ... Press ENTER to continue" << std::endl;
-}
-
-int install_individual(std::string choice, std::vector<std::string> &configs, std::vector<std::string> &config_paths) {
-    int input;
-    try {
-        input = std::stoi(choice);
-    } catch (std::invalid_argument e) {
-        choice = "-1";
-    }
-
-    if (input < 1 || input > configs.size()) return 1;
-
-    install_symlink(config_paths[input - 1], configs[input - 1]);
-
-    return 0;
-}
-
-/*
  * Functions to remove symlinks | "Remove" the dotfiles
  */
 void remove_all_dots(std::vector<std::string> &config_paths) {
@@ -124,7 +97,33 @@ int remove_individual(std::string choice, std::vector<std::string> &config_paths
     return 0;
 }
 
+/*
+ * Functions to install the symlinks | "Install" the dotfiles
+ */
+void install_all_dots(std::vector<std::string> &configs, std::vector<std::string> &config_paths) {
+    std::cout << "INSTALLING ALL DOTFILES" << std::endl;
 
+    remove_all_dots(configs);
+    for(size_t i = 0; i < config_paths.size(); i++) {
+        install_symlink(config_paths[i], configs[i]);
+    }
+    std::cout << "\n\nDone ... Press ENTER to continue" << std::endl;
+}
+
+int install_individual(std::string choice, std::vector<std::string> &configs, std::vector<std::string> &config_paths) {
+    int input;
+    try {
+        input = std::stoi(choice);
+    } catch (std::invalid_argument e) {
+        choice = "-1";
+    }
+
+    if (input < 1 || input > configs.size()) return 1;
+
+    install_symlink(config_paths[input - 1], configs[input - 1]);
+
+    return 0;
+}
 
 
 

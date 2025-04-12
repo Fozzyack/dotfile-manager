@@ -35,8 +35,10 @@ void print_options() {
     print_divider();
     std::cout << "[1] Install dotfiles" << std::endl;
     std::cout << "[2] Remove Dotfiles" << std::endl;
-    std::cout << "[3] Update dotfiles (just a git pull)" << std::endl;
-    std::cout << "[4] Exit" << std::endl;
+    std::cout << "[3] Install Tools (Bash)" << std::endl;
+    std::cout << "[4] Install Tools (Fish)" << std::endl;
+    std::cout << "[5] Update dotfiles (just a git pull)" << std::endl;
+    std::cout << "[6] Exit" << std::endl;
     print_divider();
     std::cout << "Enter Choice: ";
 }
