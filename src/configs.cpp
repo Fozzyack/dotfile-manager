@@ -23,7 +23,7 @@ void uninstall_symlink(std::string remove_dir) {
     std::filesystem::path path(remove_dir);
     if(std::filesystem::exists(path)) {
         std::cout << "Deleting File: " << path.string() << std::endl;
-        std::filesystem::remove(path);
+        std::filesystem::remove_all(path);
     } else {
         std::cout << "Could not Delete File (did not exist): " << path.string() << std::endl;
     }
@@ -101,9 +101,10 @@ int remove_individual(std::string choice, std::vector<std::string> &config_paths
  * Functions to install the symlinks | "Install" the dotfiles
  */
 void install_all_dots(std::vector<std::string> &configs, std::vector<std::string> &config_paths) {
-    std::cout << "INSTALLING ALL DOTFILES" << std::endl;
+    std::cout << "Removing all dots first" << std::endl;
+    remove_all_dots(config_paths);
 
-    remove_all_dots(configs);
+    std::cout << "INSTALLING ALL DOTFILES" << std::endl;
     for(size_t i = 0; i < config_paths.size(); i++) {
         install_symlink(config_paths[i], configs[i]);
     }
