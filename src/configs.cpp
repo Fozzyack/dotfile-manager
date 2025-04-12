@@ -101,8 +101,8 @@ int remove_individual(std::string choice, std::vector<std::string> &config_paths
  * Functions to install the symlinks | "Install" the dotfiles
  */
 void install_all_dots(std::vector<std::string> &configs, std::vector<std::string> &config_paths) {
-    std::cout << "Removing all dots first" << std::endl;
-    remove_all_dots(config_paths);
+
+    std::cout << "If a dotfile already exists it does not automatically remove it" << std::endl;
 
     std::cout << "INSTALLING ALL DOTFILES" << std::endl;
     for(size_t i = 0; i < config_paths.size(); i++) {
