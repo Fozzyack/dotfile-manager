@@ -60,14 +60,14 @@ int main() {
                 }
                 std::getline(std::cin, tmp);
                 break;
-            case 5:
+            case 4:
                 system("git pull");
                 std::cout << "Press ENTER to continue..." << std::endl;
                 std::getline(std::cin, tmp);
                 std::getline(std::cin, tmp);
                 break;
 
-            case 6:
+            case 5:
                 exit(0);
                 break;
             default:
