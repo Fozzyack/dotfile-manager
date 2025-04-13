@@ -121,7 +121,6 @@ int install_individual(std::string choice, std::vector<std::string> &configs, st
 
     if (input < 1 || input > configs.size()) return 1;
 
-    remove_individual(choice, config_paths);
 
     install_symlink(config_paths[input - 1], configs[input - 1]);
 
