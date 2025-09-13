@@ -50,6 +50,9 @@ void print_install_menu(std::vector<std::string> &configs) {
     std::cout << "[default] Install all dotfiles" << std::endl; 
     std::cout << "[num] Install a specific dotfile" << std::endl; 
     print_divider();
+    std::cout << "This does not Reinstall dotfiles"<< std::endl;
+    std::cout << "You may have to remove dotfiles first via the remove dotfiles option"<< std::endl;
+    print_divider();
     std::cout << "Configs Found (in configs file): " << std::endl;
     for (size_t i = 0; i < configs.size(); i++ ){
         std::cout << "[" << i + 1 << "] " << configs[i] << std::endl;
