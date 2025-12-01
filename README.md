@@ -1,7 +1,7 @@
 # Dotfile Manager
 
-A personal project to help automate the installation of dotfiles. Reads from ```configs/``` folder which the dots should
-be saved into.
+A personal project to help automate the installation of dotfiles. Reads from ```./configs/``` folder which the dots should
+be saved into. `./configs` should be in the same directory as the `dotfile-manager` executable.
 
 ## How
 
@@ -14,15 +14,8 @@ be saved into.
 - [x] Install single dotfile 
 - [x] Uninstall all dotfiles
 - [x] Uninstall single dotfile 
-- [x] Add a simple git pull function
+- [ ] Add a simple git pull function
 - [ ] Other Error Handling
-
-### Optionals
-
-Unsure if I will add these.
-- [ ] Add a "purge" function - Removes data stored in ```.local/share/[dotfile]``` -- Unsure if this is a good idea.
-- [ ] Freshen up the UI
-- [ ] Potentially add a feature to allow compatibility with other OS.
 
 ### How to build
 
