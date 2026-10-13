@@ -1,4 +1,7 @@
-# Dotfile Manager
+# [DEPRECATED] Dotfile Manager
+
+See [temperz](https://www.github.com/Fozzyack/temperz) for the new manager.
+
 
 A personal project to help automate the installation of dotfiles. Reads from ```./configs/``` folder which the dots should
 be saved into. `./configs` should be in the same directory as the `dotfile-manager` executable.
